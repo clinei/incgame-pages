@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dave.com</title>
+    <style>
+      body {
+        text-align: center;
+        font-family: Arial;
+      }
+      
+      .button {
+        position: relative;
+        padding: 4px 10px;
+        margin: 0 12px;
+        vertical-align: top;
+        font-weight: bold;
+        font-size: 19px;
+        background-color: #3fe25b;
+        border: 3px solid #7bf28f;
+        border-radius: 6px;
+      }
+      .button::before {
+        content: "";
+        position: absolute;
+        top: -6px;
+        left: -6px;
+        right: -6px;
+        bottom: -12px;
+        background-color: #2d843c;
+        border: 3px solid #143019;
+        border-radius: 9px;
+        z-index: -1;
+      }
+      .button.active {
+        bottom: -6px;
+      }
+      .button.active::before {
+        bottom: -6px;
+      }
+      .button:disabled {
+        background-color: #75c683;
+        border-color: #93ce9d;
+        color: #555;
+      }
+      .button:disabled::before {
+        background-color: #6C9773;
+      }
+      .button:focus {
+        outline: none;
+      }
+      
+      .cost {
+        font-weight: bold;
+        font-size: 16px;
+        display: block;
+      }
+      
+      .progressBar {
+        display: inline-block;
+        position: relative;
+        width: 300px;
+        height: 36px;
+        border: 3px solid #bababa;
+        background: #d3d3d3;
+        border-radius: 6px;
+      }
+      .progressBar::before {
+        content: "";
+        position: absolute;
+        top: -6px;
+        left: -6px;
+        bottom: -6px;
+        right: -6px;
+        border: 3px solid #143019;
+        border-radius: 9px;
+      }
+      .progressBar > div {
+        position: relative;
+        height: 100%;
+        width: 0;
+        background: #3fe25b;
+        box-sizing: border-box;
+        /*border: 3px solid #7bf28f;*/
+        border-radius: 3px;
+      }
+      
+      .item {
+        margin: 12px;
+        text-align: right;
+      }
+    </style>
+    <script src="org.js"></script>
+    <script src="util.js"></script>
+    <script src="gui.js"></script>
+    <script src="player.js"></script>
+    <script src="system.js"></script>
+    <script src="init.js"></script>
+  </head>
+  <body>
+    <h1><span id="points">0</span>Đ</h1>
+  </body>
+</html>
